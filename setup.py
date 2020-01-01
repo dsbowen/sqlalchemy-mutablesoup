@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="sqlalchemy-mutablesoup",
-    version="0.0.1",
+    version="0.0.2",
     author="Dillon Bowen",
     author_email="dsbowen@example.com",
     description="Mutable BeautifulSoup database type",
