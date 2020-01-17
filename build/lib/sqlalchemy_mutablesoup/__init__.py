@@ -73,8 +73,8 @@ class MutableSoup(Mutable, SoupBase):
             return cls(str(obj), 'html.parser')
         return super().coerce(key, obj)
 
-    def _set_element(self, *args, **kwargs):
-        super()._set_element(*args, **kwargs)
+    def set_element(self, *args, **kwargs):
+        super().set_element(*args, **kwargs)
         self.changed()
 
     def __getstate__(self):
