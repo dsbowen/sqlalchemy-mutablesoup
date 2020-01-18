@@ -30,6 +30,6 @@ You can find the latest documentation at [https://dsbowen.github.io/sqlalchemy-m
 
 Publications which use this software should include the following citation:
 
-Bowen, D.S. (2020). SQLAlchemy-MutableSoup \[Computer software\]. [https://dsbowen.github.io/sqlalchemy-mutablesoup](https://dsbowen.github.io/sqlalchemy-mutablesoup)
+Bowen, D.S. (2020). SQLAlchemy-MutableSoup \[Computer software\]. [https://dsbowen.github.io/sqlalchemy-mutablesoup](https://dsbowen.github.io/sqlalchemy-mutablesoup).
 
 This project is licensed under the MIT License [LICENSE](https://github.com/dsbowen/sqlalchemy-mutablesoup/blob/master/LICENSE).
