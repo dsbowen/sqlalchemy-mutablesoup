@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: sqlalchemy-mutablesoup
-Version: 0.0.4
+Version: 0.0.6
 Summary: Mutable BeautifulSoup database type
 Home-page: https://github.com/dsbowen/sqlalchemy-mutablesoup
 Author: Dillon Bowen

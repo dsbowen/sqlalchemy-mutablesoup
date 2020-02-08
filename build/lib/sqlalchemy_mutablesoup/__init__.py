@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 from flask import Markup
 from sqlalchemy import PickleType
 from sqlalchemy.ext.mutable import Mutable
+from sqlalchemy.types import TypeDecorator, Unicode
 
 from copy import copy
 
@@ -83,8 +84,19 @@ class MutableSoup(Mutable, SoupBase):
         return d
 
 
-class MutableSoupType(PickleType):
-    pass
+class MutableSoupType(TypeDecorator):
+    """Mutable Soup database type
+
+    Encode soup as `str` when storing in database; restore `BeautifulSoup` 
+    object when accessing from database.
+    """
+    impl = Unicode
+
+    def process_bind_param(self, value, dialect):
+        return str(value)
+
+    def process_result_value(self, value, dialect):
+        return None if value is None else BeautifulSoup(value, 'html.parser')
 
 
 MutableSoup.associate_with(MutableSoupType)
