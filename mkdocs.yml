@@ -1,0 +1,11 @@
+site_name: SQLAlchemy-MutableSoup
+docs_dir: docs_md
+site_dir: docs
+repo_url: https://github.com/dsbowen/sqlalchemy-mutablesoup
+edit_uri: edit/master/docs_md
+nav:
+  - Home: index.md
+  - Use: use.md
+theme: readthedocs
+extra_css:
+  - css/extra.css

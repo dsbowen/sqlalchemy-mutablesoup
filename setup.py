@@ -5,18 +5,18 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="sqlalchemy-mutablesoup",
-    version="0.0.6",
+    version="0.0.7",
     author="Dillon Bowen",
-    author_email="dsbowen@example.com",
+    author_email="dsbowen@wharton.upenn.edu",
     description="Mutable BeautifulSoup database type",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/dsbowen/sqlalchemy-mutablesoup",
+    url="https://dsbowen.github.io/sqlalchemy-mutablesoup",
     packages=setuptools.find_packages(),
     install_requires=[
-        'bs4==0.0.1',
-        'flask==1.1.1',
-        'sqlalchemy==1.3.12',
+        'bs4>=0.0.1',
+        'flask>=1.1.1',
+        'sqlalchemy>=1.3.12',
     ],
     classifiers=[
         "Programming Language :: Python :: 3",

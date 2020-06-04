@@ -1,3 +1,5 @@
+# SQLAlchemy-MutableSoup
+
 SQLAlchemy-MutableSoup defines a mutable [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) [SQLAlchemy](https://www.sqlalchemy.org/) database type.
 
 ## Installation
