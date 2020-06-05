@@ -103,7 +103,7 @@ Out:
 ```
 My args are: ('hello world',)
 My kwargs are: {'hello': 'moon'}
-<p>Hello Moon.<span></span></p>
+<p>Hello Moon.<span>Span text</span></p>
 ```
 
 #### Registering changes
@@ -120,7 +120,7 @@ model.soup
 Out:
 
 ```
-<p style="color:red;">Hello Moon.<span></span></p>
+<p style="color:red;">Hello Moon.<span>Span text</span></p>
 ```
 
 <table class="docutils field-list field-table" frame="void" rules="none">
@@ -304,7 +304,7 @@ that a `MutableSoup` object can be set using a string or
 
 
 <p class="func-header">
-    <i></i> <b>set_element</b>(<i>self, *args, **kwargs</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/sqlalchemy-mutablesoup/blob/master/sqlalchemy_mutablesoup/__init__.py#L266">[source]</a>
+    <i></i> <b>set_element</b>(<i>self, *args, **kwargs</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/sqlalchemy-mutablesoup/blob/master/sqlalchemy_mutablesoup/__init__.py#L268">[source]</a>
 </p>
 
 Inherits from `SoupBase.set_element`. The only addition is that this

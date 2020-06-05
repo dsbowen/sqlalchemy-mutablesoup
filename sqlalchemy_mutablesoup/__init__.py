@@ -82,7 +82,7 @@ Out:
 ```
 My args are: ('hello world',)
 My kwargs are: {'hello': 'moon'}
-<p>Hello Moon.<span></span></p>
+<p>Hello Moon.<span>Span text</span></p>
 ```
 
 #### Registering changes
@@ -99,7 +99,7 @@ model.soup
 Out:
 
 ```
-<p style="color:red;">Hello Moon.<span></span></p>
+<p style="color:red;">Hello Moon.<span>Span text</span></p>
 ```
 """
 
@@ -197,8 +197,7 @@ class SoupBase(BeautifulSoup):
             parent, target_selector, gen_target, args, kwargs
         )
         target.clear()
-        if val:
-            target.append(self._convert_to_soup(val))
+        target.append(self._convert_to_soup(val))
         return self
 
     def _get_target(self, parent, target_selector, gen_target, args, kwargs):
@@ -222,10 +221,13 @@ class SoupBase(BeautifulSoup):
         if target_selector is None:
             return parent
         target = parent.select_one(target_selector)
-        if target is None:
-            target = self._convert_to_soup(gen_target(*args, **kwargs))
-            parent.append(target)
-        return target
+        if target is not None:
+            return target
+        target = self._convert_to_soup(gen_target(*args, **kwargs))
+        parent.append(target)
+        # Note: cannot return target
+        # for some reason BeautifulSoup deletes it on append
+        return parent.select_one(target_selector)
 
     def _convert_to_soup(self, obj):
         """
