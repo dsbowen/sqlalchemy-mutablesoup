@@ -185,7 +185,38 @@ Get text from html element.
 
 
 <p class="func-header">
-    <i></i> <b>copy</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/sqlalchemy-mutablesoup/blob/master/sqlalchemy_mutablesoup/__init__.py#L137">[source]</a>
+    <i></i> <b>get_str</b>(<i>self, selector</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/sqlalchemy-mutablesoup/blob/master/sqlalchemy_mutablesoup/__init__.py#L137">[source]</a>
+</p>
+
+Get string from html element.
+
+<table class="docutils field-list field-table" frame="void" rules="none">
+    <col class="field-name" />
+    <col class="field-body" />
+    <tbody valign="top">
+        <tr class="field">
+    <th class="field-name"><b>Parameters:</b></td>
+    <td class="field-body" width="100%"><b>selector : <i>str</i></b>
+<p class="attr">
+    CSS selector.
+</p></td>
+</tr>
+<tr class="field">
+    <th class="field-name"><b>Returns:</b></td>
+    <td class="field-body" width="100%"><b>string : <i>str or None</i></b>
+<p class="attr">
+    Return string from selected html element. Return <code>None</code> if no element is selected.
+</p></td>
+</tr>
+    </tbody>
+</table>
+
+
+
+
+
+<p class="func-header">
+    <i></i> <b>copy</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/sqlalchemy-mutablesoup/blob/master/sqlalchemy_mutablesoup/__init__.py#L155">[source]</a>
 </p>
 
 
@@ -209,7 +240,7 @@ Get text from html element.
 
 
 <p class="func-header">
-    <i></i> <b>render</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/sqlalchemy-mutablesoup/blob/master/sqlalchemy_mutablesoup/__init__.py#L146">[source]</a>
+    <i></i> <b>render</b>(<i>self</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/sqlalchemy-mutablesoup/blob/master/sqlalchemy_mutablesoup/__init__.py#L164">[source]</a>
 </p>
 
 Render html for insertion into a Jinja template.
@@ -233,7 +264,7 @@ Render html for insertion into a Jinja template.
 
 
 <p class="func-header">
-    <i></i> <b>set_element</b>(<i>self, parent_selector, val, target_selector=None, gen_target=None, args=(), kwargs={}</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/sqlalchemy-mutablesoup/blob/master/sqlalchemy_mutablesoup/__init__.py#L157">[source]</a>
+    <i></i> <b>set_element</b>(<i>self, parent_selector, val, target_selector=None, gen_target=None, args=(), kwargs={}</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/sqlalchemy-mutablesoup/blob/master/sqlalchemy_mutablesoup/__init__.py#L175">[source]</a>
 </p>
 
 Set a soup element.
@@ -304,7 +335,7 @@ that a `MutableSoup` object can be set using a string or
 
 
 <p class="func-header">
-    <i></i> <b>set_element</b>(<i>self, *args, **kwargs</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/sqlalchemy-mutablesoup/blob/master/sqlalchemy_mutablesoup/__init__.py#L268">[source]</a>
+    <i></i> <b>set_element</b>(<i>self, *args, **kwargs</i>) <a class="src-href" target="_blank" href="https://github.com/dsbowen/sqlalchemy-mutablesoup/blob/master/sqlalchemy_mutablesoup/__init__.py#L290">[source]</a>
 </p>
 
 Inherits from `SoupBase.set_element`. The only addition is that this

@@ -134,6 +134,24 @@ class SoupBase(BeautifulSoup):
         elem = self.select_one(selector)
         return None if elem is None else elem.text
 
+    def get_str(self, selector):
+        """
+        Get string from html element.
+
+        Parameters
+        ----------
+        selector : str
+            CSS selector.
+
+        Returns
+        -------
+        string : str or None
+            Return string from selected html element. Return `None` if no 
+            element is selected.
+        """
+        elem = self.select_one(selector)
+        return None if elem is None else str(elem)
+
     def copy(self):
         """
         Returns
@@ -196,8 +214,12 @@ class SoupBase(BeautifulSoup):
         target = self._get_target(
             parent, target_selector, gen_target, args, kwargs
         )
-        target.clear()
-        target.append(self._convert_to_soup(val))
+        if not val and parent != target:
+            target.extract()
+        else:
+            target.clear()
+            if val:
+                target.append(self._convert_to_soup(val))
         return self
 
     def _get_target(self, parent, target_selector, gen_target, args, kwargs):
@@ -274,9 +296,8 @@ class MutableSoup(Mutable, SoupBase):
         -------
         self : sqlalchemy_mutable.MutableSoup
         """
-        super().set_element(*args, **kwargs)
         self.changed()
-        return self
+        return super().set_element(*args, **kwargs)
 
     def __getstate__(self):
         d = self.__dict__.copy()
@@ -292,7 +313,7 @@ class MutableSoupType(TypeDecorator):
 
     def process_bind_param(self, value, dialect):
         """Encode as string when storing in database."""
-        return str(value)
+        return None if value is None else str(value)
 
     def process_result_value(self, value, dialect):
         """Restore `BeautifulSoup` object when accessing from database."""
